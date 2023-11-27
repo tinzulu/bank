@@ -16,4 +16,4 @@ git clone bank
 * transaction 4001
 * support 4002
 
-The system requires postgres, cassandra and redis to successfully run
+The system requires postgres, cassandra, kafka and redis to successfully run
