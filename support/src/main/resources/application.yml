@@ -1,0 +1,7 @@
+cassandra:
+  contactpoints: 127.0.0.1
+  port: 9142
+  keyspace: supportKeyStore
+
+server:
+  port: 4002

@@ -1,0 +1,38 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/transactionDB
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  application:
+    name: bank-transaction
+
+application:
+  name: bank-transaction
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          min-partition-count: 3
+      bindings:
+        news-in-0:
+          destination: ACCOUNT_CREATED
+          group: bankConsumerGroup
+          content-type: application/json
+
+
+server:
+  port: 4001
+
+
+
+
